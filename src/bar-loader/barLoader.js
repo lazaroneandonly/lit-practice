@@ -12,27 +12,27 @@ class BarLoader extends LitElement {
     super();
     this._loadBarBlocksNumber = 0;
     this._hasToRestart = false;
-  }
+  };
 
   connectedCallback() {
     super.connectedCallback();
     this.timer = setInterval(() => {
       this._loadBarBlocksNumber++;
     }, 1000);
-  }
+  };
 
   updated(changedProperties) {
     super.updated(changedProperties);
     if (this._loadBarBlocksNumber === 4) {
       this._loadBarBlocksNumber = 0;
-    }
-  }
+    };
+  };
 
   disconnectedCallback() {
     super.disconnectedCallback();
     clearInterval(this.timer); // Clean up the timer when the component is removed
     console.log('Loader cleared up!');
-  }
+  };
 
   render() {
     return html`
@@ -42,7 +42,7 @@ class BarLoader extends LitElement {
         )}
       </div>
     `;
-  }
-}
+  };
+};
 
 customElements.define('bar-loader', BarLoader);

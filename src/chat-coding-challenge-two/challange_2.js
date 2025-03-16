@@ -28,16 +28,12 @@ export class PollingList extends LitElement {
   // Simulated API fetch (replace with actual API if needed)
   async _fetchTasks() {
     // Simulating a delay like a real API
-    this._pollingIntervalId = new Promise((resolve) => {
-      setInterval(() => {
-        resolve([
-          this._isPollingActice
-            ? this._addToPollingList(Math.floor(Math.random() * 100))
-            : null,
-          this.requestUpdate(),
-        ]);
-      }, 2000);
-    });
+    this._pollingIntervalId = setInterval(() => {
+      this._isPollingActice
+        ? this._addToPollingList(Math.floor(Math.random() * 100))
+        : null,
+        this.requestUpdate();
+    }, 2000);
 
     return this._pollingIntervalId;
   }

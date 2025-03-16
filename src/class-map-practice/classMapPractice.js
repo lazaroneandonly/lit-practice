@@ -12,8 +12,8 @@ class classMapPractice extends LitElement {
   constructor() {
     super();
     this.valueTestText =
-      'when the above value has an input and submitted this will change';
-  }
+      'When the above value has an input and submitted this will change';
+  };
 
   static styles = css`
     .active {
@@ -24,17 +24,14 @@ class classMapPractice extends LitElement {
       opacity: 0.5;
       pointer-events: none;
     }
-
     .green {
       background-color: #006400;
       color: white;
     }
-
     .yellow {
       background-color: #ffea00;
       color: black;
     }
-
     .changed {
       background-color: black;
       color: white;
@@ -43,11 +40,11 @@ class classMapPractice extends LitElement {
 
   toggleActive() {
     this.isActive = !this.isActive;
-  }
+  };
 
   handleInput(event) {
     this.inputValue = event.target.value; // Access the value directly from the event target
-  }
+  };
 
   handleSubmit(event) {
     event.preventDefault(); // Prevent form submission
@@ -55,7 +52,7 @@ class classMapPractice extends LitElement {
     console.log('Form Value:', formData.get('inputField'));
     this.furtherText = formData.get('inputField');
     this.valueTestText = 'changed ';
-  }
+  };
 
   render() {
     const classes = {
@@ -94,7 +91,7 @@ class classMapPractice extends LitElement {
         ${this.valueTestText} to "${this.furtherText}"
       </div>
     `;
-  }
-}
+  };
+};
 
 customElements.define('class-map-practice', classMapPractice);

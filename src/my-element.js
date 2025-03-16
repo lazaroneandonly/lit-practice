@@ -14,6 +14,7 @@ import './array-practice/arrayPractice.js';
 import './slot-practice/parentForSlot.js';
 import './class-map-practice/classMapPractice.js';
 import './block-element-modifier-example/BEM-example.js';
+import './practice-with-breakpoints/breakpointsPractice.js'
 
 class MyElement extends LitElement {
   static styles = [elementStyles];
@@ -27,7 +28,7 @@ class MyElement extends LitElement {
     super();
     this._excerciseToView = 'experiment-with-updated';
     this._display = html`<experiment-with-updated></experiment-with-updated>`;
-  }
+  };
 
   // TODO: Make a mapper for this in a separate file
   _set_ExcerciseToView(excerciseIdentity) {
@@ -35,19 +36,19 @@ class MyElement extends LitElement {
 
     if (excerciseIdentity === 'dummy-experiment') {
       this._display = html`<dummy-experiment></dummy-experiment>`;
-    }
+    };
 
     if (excerciseIdentity === 'experiment-with-updated') {
       this._display = html`<experiment-with-updated></experiment-with-updated>`;
-    }
+    };
 
     if (excerciseIdentity === 'get-request-practice') {
       this._display = html`<get-request-practice></get-request-practice>`;
-    }
+    };
 
     if (excerciseIdentity === 'bar-loader') {
       this._display = html`<bar-loader></bar-loader>`;
-    }
+    };
 
     if (excerciseIdentity === 'with-bar-loader') {
       this._display = html`<with-bar-loader></with-bar-loader>`;
@@ -55,40 +56,44 @@ class MyElement extends LitElement {
 
     if (excerciseIdentity === 'parent-component') {
       this._display = html`<parent-component></parent-component>`;
-    }
+    };
 
     if (excerciseIdentity === 'component-using-mixin') {
       this._display = html`<component-using-mixin></component-using-mixin>`;
-    }
+    };
 
     if (excerciseIdentity === 'task-list') {
       this._display = html`<task-list></task-list>`;
-    }
+    };
 
     if (excerciseIdentity === 'polling-list') {
       this._display = html`<polling-list></polling-list>`;
-    }
+    };
 
     if (excerciseIdentity === 'user-profile-component') {
       this._display = html`<user-profile-component></user-profile-component>`;
-    }
+    };
 
     if (excerciseIdentity === 'array-practice') {
       this._display = html`<array-practice></array-practice>`;
-    }
+    };
 
     if (excerciseIdentity === 'parent-for-slot') {
       this._display = html`<parent-for-slot></parent-for-slot>`;
-    }
+    };
 
     if (excerciseIdentity === 'class-map-practice') {
       this._display = html`<class-map-practice></class-map-practice>`;
-    }
+    };
 
     if (excerciseIdentity === 'bem-practice') {
       this._display = html`<bem-practice></bem-practice>`;
-    }
-  }
+    };
+
+    if (excerciseIdentity === 'breakpoints-practice') {
+      this._display = html`<breakpoints-practice></breakpoints-practice>`
+    };
+  };
 
   //TODO: Refactor this to align it in one light
   render() {
@@ -208,12 +213,20 @@ class MyElement extends LitElement {
           >
             BEM EXAMPLE PRACTICE
           </button>
+
+          <button
+            @click=${() => {
+              this._set_ExcerciseToView('breakpoints-practice');
+            }}
+          >
+            BREAKPOINTS PRACTICE
+          </button>
         </div>
 
         <div class="excercise-viewport">${this._display}</div>
       </div>
     `;
-  }
-}
+  };
+};
 
 customElements.define('my-element', MyElement);

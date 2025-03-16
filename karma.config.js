@@ -1,14 +1,14 @@
 const { createDefaultConfig } = require('@open-wc/testing-karma');
 
-module.exports = config => {
+module.exports = (config) => {
   config.set({
     ...createDefaultConfig(config),
-    frameworks: ['mocha', 'chai'],  // Mocha + Chai for tests
+    frameworks: ['mocha', 'chai'], // Mocha + Chai for tests
     files: [
-      { pattern: 'test/**/*.test.js', type: 'module' },  // Update with your actual test path
+      { pattern: 'test/**/*.test.js', type: 'module' }, // Update with your actual test path
     ],
     preprocessors: {
-      '**/*.js': ['babel'],  // Add babel preprocessing for JS files
+      '**/*.js': ['babel'], // Add babel preprocessing for JS files
     },
     babelPreprocessor: {
       options: {
@@ -17,9 +17,9 @@ module.exports = config => {
     },
     reporters: ['progress'],
     browsers: ['ChromeHeadless', 'Safari'],
-    singleRun: true,  // Run tests once
+    singleRun: true, // Run tests once
     esm: {
-      nodeResolve: true,  // Use Node module resolution
+      nodeResolve: true, // Use Node module resolution
     },
   });
 };

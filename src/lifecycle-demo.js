@@ -12,7 +12,7 @@ class lifeCycleDemo extends LitElement {
     super(); // Calls the super lit class element
     this.counter = 0;
     console.log('in the constructor, component created!');
-  }
+  };
 
   connectedCallback() {
     super.connectedCallback();
@@ -22,18 +22,18 @@ class lifeCycleDemo extends LitElement {
       this.counter++;
     }, 1000);
     // Starts a timer, and setInterval here increases the counter every 1000 miliseconds (1 second)
-  }
+  };
 
   disconnectedCallback() {
     super.disconnectedCallback();
     console.log(':disconnectedCallback: Component removed from the DOM');
 
     clearInterval(this.Timer); // Cleans the timer up
-  }
+  };
 
   _setAltert() {
     window.alert('clearinterval has passed');
-  }
+  };
 
   /**
    * UNTIL NOW, I had a faily good idea of the above
@@ -67,8 +67,7 @@ class lifeCycleDemo extends LitElement {
    * to the changed property (nameOfStaticProperty) by going through
    * changedProperties.has('nameOfStaticProperty');
    *
-   * Thisn seems to be a boolean - perhaps can also be written as
-   *
+   * This seems to be a boolean - perhaps can also be written as
    * return changedProperties.has('nameOfStaticProperty') ? 'this thing' : 'the other thing';
    *
    */
@@ -87,7 +86,7 @@ class lifeCycleDemo extends LitElement {
         <div class="counter">${this.counter}</div>
       </div>
     `;
-  }
-}
+  };
+};
 
 customElements.define('life-cycle-demo', lifeCycleDemo);

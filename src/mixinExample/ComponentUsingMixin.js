@@ -12,11 +12,11 @@ class ComponentUsingMixin extends mixinExample(LitElement) {
   connectedCallback() {
     super.connectedCallback();
     this._componentText = 'IT WILL APPEAR HERE';
-  }
+  };
 
   _pressButton() {
     this._componentText = this.sayHello('Lazar');
-  }
+  };
 
   render() {
     return html`
@@ -27,7 +27,7 @@ class ComponentUsingMixin extends mixinExample(LitElement) {
       <br />
       <h2>${this._componentText}</h2>
     `;
-  }
-}
+  };
+};
 
 customElements.define('component-using-mixin', ComponentUsingMixin);

@@ -36,18 +36,18 @@ class ArrayPractice extends LitElement {
       { id: 4, completed: true },
       { id: 5, text: 'last', completed: false },
     ];
-  }
+  };
 
   connectedCallback() {
     super.connectedCallback();
     this._filterSecondArrayAugmented();
-  }
+  };
 
   _mapFirstArray() {
     return this._arraySourceOne.map((element) =>
       element.Value.includes('prime') ? ` ${element.Value},` : null
     );
-  }
+  };
 
   // Wrong example for study ...
 
@@ -68,7 +68,7 @@ class ArrayPractice extends LitElement {
     );
 
     return ArrayFilter;
-  }
+  };
 
   _formatObjectData(element) {
     return html`
@@ -84,13 +84,13 @@ class ArrayPractice extends LitElement {
 
   _formatObjectDataOther(element) {
     return html` <p>TEXT: ${element.text}</p> `;
-  }
+  };
 
   _filterThirdArray() {
     return this._arraySourceThree.filter((element) =>
       element.hasOwnProperty('text')
     );
-  }
+  };
 
   render() {
     return html`
@@ -117,7 +117,7 @@ class ArrayPractice extends LitElement {
         )}
       </p>
     `;
-  }
-}
+  };
+};
 
 customElements.define('array-practice', ArrayPractice);
