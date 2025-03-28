@@ -1,30 +1,17 @@
-const USER_ROLES = {
-  ADMIN: 'admin',
-  EDITOR: 'editor',
-  VIEWER: 'viewer',
-};
+const USER_ROLES = [
+  {admin: 'Administrator'},
+  {editor: 'Content Editor'},
+  {viewer: 'General Viewer'},
+];
 
 export function userRolesAdapter(roleGiven) {
-  let rolereturned;
-
-  switch (roleGiven) {
-    case USER_ROLES.ADMIN:
-      rolereturned = 'Administrator';
-      break;
-
-    case USER_ROLES.EDITOR:
-      rolereturned = 'Content Editor';
-      break;
-
-    case USER_ROLES.VIEWER:
-      rolereturned = 'General Viewer';
-      break;
-
-    default:
-      rolereturned = 'No role given';
+  for (const role of USER_ROLES) {
+    const key = Object.keys(role)[0]; // Get the first key (e.g., 'ADMIN')
+    if (key === roleGiven) {
+      return role[key]; // Return the value (e.g., 'admin')
+    }
   }
-
-  return rolereturned;
+  return "No role given";
 }
 
 export function otherUserInfoAdapter(userInfoInput) {

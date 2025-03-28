@@ -34,6 +34,10 @@ class BarLoader extends LitElement {
     console.log('Loader cleared up!');
   };
 
+  // TODO Try to simplify the below function
+  // Perhaps an array.map will work
+  // Or an array.forEach maybe?
+  
   render() {
     return html`
       <div class="bars-holder">
